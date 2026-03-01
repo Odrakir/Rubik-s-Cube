@@ -13,15 +13,6 @@ const splitMoves = (alg: string): string[] =>
     .filter(Boolean);
 
 export default function App() {
-  return (
-    <div style={{ padding: 16 }}>
-      <div>App loaded ✅</div>
-      {/* your existing scene / canvas below */}
-    </div>
-  );
-}
-
-export default function App() {
   const mountRef = useRef<HTMLDivElement>(null);
   const sceneRef = useRef<RubiksScene | null>(null);
   const cubeStateRef = useRef(new CubeState());
@@ -89,6 +80,8 @@ export default function App() {
   };
 
   return (
+<div style={{ padding: 16 }}>
+      <div>App loaded ✅</div>
     <div className="app">
       <div className="panel">
         <h1>Rubik&apos;s Cube (Three.js + cubejs)</h1>
@@ -107,6 +100,7 @@ export default function App() {
         <p className="scramble">{scrambleText || 'No scramble yet.'}</p>
       </div>
       <div className="viewport" ref={mountRef} />
+    </div>
     </div>
   );
 }
