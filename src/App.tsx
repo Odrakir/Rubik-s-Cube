@@ -13,6 +13,15 @@ const splitMoves = (alg: string): string[] =>
     .filter(Boolean);
 
 export default function App() {
+  return (
+    <div style={{ padding: 16 }}>
+      <div>App loaded ✅</div>
+      {/* your existing scene / canvas below */}
+    </div>
+  );
+}
+
+export default function App() {
   const mountRef = useRef<HTMLDivElement>(null);
   const sceneRef = useRef<RubiksScene | null>(null);
   const cubeStateRef = useRef(new CubeState());
