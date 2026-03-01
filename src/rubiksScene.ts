@@ -171,7 +171,7 @@ export class RubiksScene {
     return new Promise((resolve) => {
       if (!animated) {
         pivot.rotation[axis] = target;
-        this.finishPivotTurn(pivot, cubies, axis);
+        this.finishPivotTurn(pivot, cubies);
         resolve();
         return;
       }
@@ -188,14 +188,14 @@ export class RubiksScene {
           return;
         }
 
-        this.finishPivotTurn(pivot, cubies, axis);
+        this.finishPivotTurn(pivot, cubies);
         resolve();
       };
       requestAnimationFrame(tick);
     });
   }
 
-  private finishPivotTurn(pivot: THREE.Object3D, cubies: RenderCubie[], axis: Axis) {
+  private finishPivotTurn(pivot: THREE.Object3D, cubies: RenderCubie[]) {
     cubies.forEach((c) => {
       this.scene.attach(c.mesh);
       c.mesh.position.set(snap(c.mesh.position.x / SPACING) * SPACING, snap(c.mesh.position.y / SPACING) * SPACING, snap(c.mesh.position.z / SPACING) * SPACING);
