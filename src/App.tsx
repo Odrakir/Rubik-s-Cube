@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import Cube from 'cubejs';
+import 'cubejs/lib/solve';
 import { CubeState, generateScramble, SOLVED_FACELETS } from './cube';
 import { RubiksScene } from './rubiksScene';
 import './styles.css';
